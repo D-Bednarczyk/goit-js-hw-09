@@ -29,7 +29,7 @@ function createPromise(position, delay) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  for (i = 0; i < ElForm.elements.amount.value; i++) {
+  for (let i = 0; i < ElForm.elements.amount.value; i++) {
     /*   console.log(
       i,
       Number(ElForm.elements.delay.value) +
