@@ -1,4 +1,5 @@
 // Opisany w dokumentacji
+import Notiflix from 'notiflix';
 import flatpickr from 'flatpickr';
 // Dodatkowy import stylów
 import 'flatpickr/dist/flatpickr.min.css';
@@ -41,7 +42,7 @@ const options = {
   onClose(selectedDates) {
     if (selectedDates[0] < options.defaultDate) {
       ElButtonStart.disabled = true;
-      window.alert('Please choose a date in the future');
+      Notiflix.Notify.warning('Please choose a date in the future');
     } else {
       ElButtonStart.disabled = false;
       PIckedDate = selectedDates[0];

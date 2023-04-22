@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 const ElForm = document.querySelector('.form');
 
 ElForm.addEventListener('input', handleInput);
@@ -41,10 +42,14 @@ function handleSubmit(event) {
         Number(ElForm.elements.step.value) * i
     )
       .then(({ position, delay }) => {
-        console.log(`Fulfilled promise ${position + 1} in ${delay}ms`);
+        Notiflix.Notify.success(
+          `Fulfilled promise ${position + 1} in ${delay}ms`
+        );
       })
       .catch(({ position, delay }) => {
-        console.log(`Rejected promise ${position + 1} in ${delay}ms`);
+        Notiflix.Notify.failure(
+          `Rejected promise ${position + 1} in ${delay}ms`
+        );
       });
   }
   //console.log(ElForm.elements.step.value);
